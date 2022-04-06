@@ -1,7 +1,7 @@
 const express = require('express')
 var passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
-
+const dotenv = require('dotenv').config();
 const app = express();
 
 
@@ -37,6 +37,6 @@ app.get('/users', passport.authenticate('basic', { session: false }), function (
     })
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log("server started")
 })
