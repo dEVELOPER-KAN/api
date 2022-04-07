@@ -14,7 +14,7 @@ passport.use(new BasicStrategy(
         }
     }
 ));
-
+//o
 app.use(passport.initialize());
 
 app.get('/users', passport.authenticate('basic', { session: false }), function (req, res) {
